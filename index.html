@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Counter Program</h1>
+        <div class="counter">
+            <button id="decreaseBtn" class="btn">-</button>
+            <span id="countValue" class="count">0</span>
+            <button id="increaseBtn" class="btn">+</button>
+        </div>
+    </div>
+    
+    <script>
+        // Elemen DOM
+        const countValue = document.getElementById('countValue');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        
+        // Nilai awal
+        let count = 0;
+        
+        // Fungsi untuk memperbarui tampilan nilai
+        function updateCount() {
+            countValue.textContent = count;
+        }
+        
+        // Event listener untuk tombol +
+        increaseBtn.addEventListener('click', function() {
+            count++;
+            updateCount();
+        });
+        
+        // Event listener untuk tombol -
+        decreaseBtn.addEventListener('click', function() {
+            count--;
+            updateCount();
+        });
+        
+        // Inisialisasi tampilan awal
+        updateCount();
+    </script>
+</body>
+</html>
